@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const monk = require('monk');
 const Filter = require('bad-words');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 
@@ -28,6 +29,11 @@ function isValidMew(mew) {
 	return mew.name && mew.name.toString().trim() !== '' &&
 	mew.content && mew.content.toString().trim() !== '';
 }
+
+app.use(rateLimit({
+	windowMs: 5 * 1000, //1 request every 5 seconds limit
+	max: 1
+}));
 
 app.post('/mews', (req, res) => {
 	if (isValidMew(req.body)) {

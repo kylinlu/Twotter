@@ -29,6 +29,9 @@ form.addEventListener('submit', (event) => {
 	}).then(response => response.json())
 	  .then(createdMew => {
 	  	form.reset();
+	  	setTimeout(() => {
+	  		form.style.display = '';
+	  	}, 5000);
 	  	form.style.display = '';
 	  	listAllMews();
 	  	loadingElement.style.display = 'none';
