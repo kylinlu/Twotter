@@ -1,7 +1,7 @@
 const form = document.querySelector('form');
 const loadingElement = document.querySelector('.loading');
 const mewsElement = document.querySelector('.mews');
-const API_URL = 'http://localhost:5000/mews';
+const API_URL = windo.location.hostname == 'localhost' ? 'http://localhost:5000/mews' : 'https://meower-api.now.sh/mews';
 
 loadingElement.style.display = '';
 
