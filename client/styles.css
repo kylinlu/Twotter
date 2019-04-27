@@ -14,3 +14,9 @@
 .mews {
 	width: 80%;
 }
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin: 1em;
+}

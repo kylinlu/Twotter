@@ -22,7 +22,38 @@ app.get('/mews', (req, res) => {
 		.find()
 		.then(mews => {
 			res.json(mews);
-		});
+		}).catch(next);
+});
+
+app.get('/v2/mews', (req, res) => {
+	let { skip = 0, limit = 10, sort = 'desc' } = req.query;
+	skip = parseInt(skip) || 0;
+	limit = parseInt(limit) || 10;
+	skip = skip < 0 ? 0 : skip
+	limt = Math.min(50, Math.max(1, limit));
+	Promise.all([
+		mews.
+			count(),
+		mews
+			.find({}, {
+				skip,
+				limit,
+				sort: {
+					created:  sort === 'desc' ? -1 : 1
+				}
+			})
+	])
+		.then(([ total, mews ]) => {
+			res.json({
+				total,
+				mews,
+				meta: {
+					skip,
+					limit,
+					has_more: total - (skip + limit) > 0,
+				}
+			});
+		}).catch(next);
 });
 
 function isValidMew(mew) {
