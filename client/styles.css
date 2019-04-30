@@ -1,18 +1,23 @@
 .title {
+	font-family: "Papyrus";
+	text-align: center;
+	margin: 1em;
+}
+
+.twot-name {
+	width: 20%;
 	text-align: center;
 }
 
-.mew-form, .loading {
-	width: 50%;
-	margin: 0 auto;
+.twot-text {
+	width: 35%;
+	text-align: center;
 }
 
 .loading {
+	width: 50%;
+	margin: 0 auto;
 	text-align: center;
-}
-
-.mews {
-	width: 80%;
 }
 
 .button-container {

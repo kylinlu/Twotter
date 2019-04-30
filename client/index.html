@@ -3,28 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tweeker</title>
+  <title>Twotter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
   <link rel="stylesheet" href="styles.css">
+  <style>
+  	body {background-color: #c0deed;}
+  </style>
 </head>
 <body>
   <header>
     <h1 class="title">Twotter 🙉</h1>
   </header>
   <main>
-    <form class="twot-form">
-      <div class="error-message">
-      </div>
-      <label for="name">Twot Name 🐵</label>
-      <input class="u-full-width" type="text" id="name" name="name">
-      <label for="content">What happened?! 🙊</label>
-      <textarea class="u-full-width" type="text" id="content" name="content"></textarea>
-      <button class="button-primary">Toot Twot!! 🙈</button>
-    </form>
-    <div class="twots">
-
-    </div>
+  	<div align="center">
+  		<form class="twot-name">
+	      <div class="error-message">
+	      </div>
+	      <label for="name">Twot Name 🐵</label>
+	      <input class="u-full-width" type="text" id="name" name="name">
+	    </form>
+	    <form class="twot-text">
+	      <label for="content">What happened?! 🙊</label>
+	      <textarea class="u-full-width" type="text" id="content" name="content"></textarea>
+	    </form>
+	    <button class="button-primary">Toot Twot!! 🙈</button>
+	</div>
     <div class="button-container">
       <p id="loadMore">Loading...</p>
     </div>
